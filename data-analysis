@@ -1,0 +1,53 @@
+### A Pluto.jl notebook ###
+# v0.12.17
+
+using Markdown
+using InteractiveUtils
+
+# ╔═╡ 30fe24e6-4584-11eb-1bbe-69bdf11577da
+using DataFrames
+
+# ╔═╡ 78006de0-4584-11eb-3990-d344428fb2ee
+using CSV
+
+# ╔═╡ 60da9828-4586-11eb-149b-93667e86c30f
+md"""
+# Data Analysis of Internet News
+- [x] Import Data
+- [ ] Display column names
+- [ ] Plot the distrbution of sources, authors
+- [ ] Make a word cloud.
+"""
+
+# ╔═╡ 59890220-4587-11eb-000d-17acdb41c67d
+md"Importing the data file, \"articles_data.csv\""
+
+# ╔═╡ 1d24d176-4585-11eb-33fe-a9d9abfc94ba
+data = DataFrame(CSV.File("articles_data.csv"))
+
+# ╔═╡ ae1a254c-4589-11eb-3361-8fffaa22f423
+md"summary of data"
+
+# ╔═╡ 14cf1616-4588-11eb-16e8-f99eb48c04e4
+describe(data)
+
+# ╔═╡ 9b855258-4589-11eb-1000-351ffd4e2a25
+md"Removing the rows with missing Data"
+
+# ╔═╡ 0c5a65c0-4589-11eb-1ed4-ebb3eb1a1874
+DataFrames.dropmissing!(data)
+
+# ╔═╡ d7941d3a-4587-11eb-0d16-6979760f882d
+md"Importing Ploting functions"
+
+# ╔═╡ Cell order:
+# ╟─60da9828-4586-11eb-149b-93667e86c30f
+# ╠═30fe24e6-4584-11eb-1bbe-69bdf11577da
+# ╠═78006de0-4584-11eb-3990-d344428fb2ee
+# ╟─59890220-4587-11eb-000d-17acdb41c67d
+# ╟─1d24d176-4585-11eb-33fe-a9d9abfc94ba
+# ╟─ae1a254c-4589-11eb-3361-8fffaa22f423
+# ╠═14cf1616-4588-11eb-16e8-f99eb48c04e4
+# ╟─9b855258-4589-11eb-1000-351ffd4e2a25
+# ╟─0c5a65c0-4589-11eb-1ed4-ebb3eb1a1874
+# ╟─d7941d3a-4587-11eb-0d16-6979760f882d
